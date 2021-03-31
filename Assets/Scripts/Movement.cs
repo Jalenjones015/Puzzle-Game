@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public KeyCode back;
     public GameObject player;
     public float speed;
+    public Time time;
 
     void FixedUpdate()
     {

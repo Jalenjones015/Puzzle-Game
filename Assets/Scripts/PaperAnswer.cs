@@ -15,6 +15,7 @@ public class PaperAnswer : MonoBehaviour
         GameObject var = GameObject.Find("Player");
         var.GetComponent<Mouse>().enabled = false;
         var.GetComponent<Movement>().enabled = false;
+        
     }
 
     public void AnsRight()
