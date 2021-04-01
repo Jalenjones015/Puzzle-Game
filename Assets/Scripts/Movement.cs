@@ -10,9 +10,8 @@ public class Movement : MonoBehaviour
     public KeyCode back;
     public GameObject player;
     public float speed;
-    public Time time;
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (Input.GetKey(right))
         {
@@ -33,6 +32,6 @@ public class Movement : MonoBehaviour
         {
             player.transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
         }
-
+     
     }
 }

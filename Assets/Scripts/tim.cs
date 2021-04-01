@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Time : MonoBehaviour
+public class tim : MonoBehaviour
 {
-    private float timer = 750;
+    private float timer = 300;
     public Text display;
 
     private void Update()

@@ -38,6 +38,7 @@ public class Door : MonoBehaviour
                 anim = hit.transform.GetComponentInParent<Animator>();
                 opened = !opened;
                 anim.SetBool("Opened", !opened);
+                
             }
         }
     }
