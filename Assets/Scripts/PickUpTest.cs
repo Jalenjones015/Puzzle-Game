@@ -9,6 +9,7 @@ public class PickUpTest : MonoBehaviour
     public UnityEvent paper;
     public KeyCode Action;
     public bool range;
+    public GameObject f;
 
     void Update()
     {
@@ -17,14 +18,16 @@ public class PickUpTest : MonoBehaviour
             if (Input.GetKeyDown(Action))
             {
                 paper.Invoke();
+                f.SetActive(false);
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.tag == "Player")
         {
+            f.SetActive(true);
             range = true;
             Debug.Log("Ranged");
         }
@@ -32,9 +35,10 @@ public class PickUpTest : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.tag == "Player")
         {
             range = false;
+            f.SetActive(false);
         }
     }
 }

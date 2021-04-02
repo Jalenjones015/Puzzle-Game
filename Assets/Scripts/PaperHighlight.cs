@@ -19,7 +19,7 @@ public class PaperHighlight : MonoBehaviour
             selection = null;
         }
 
-        var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height/2f, 0f));
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit, Max))
         {

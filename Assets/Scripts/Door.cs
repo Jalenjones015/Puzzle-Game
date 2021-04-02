@@ -4,42 +4,30 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Transform Camera;
-    [Header("MaxDistance you can open or close the door.")]
-    public float Max = 5;
-
-    private bool opened = false;
     private Animator anim;
+    public GameObject e;
 
 
-
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        //This will tell if the player press F on the Keyboard. P.S. You can change the key if you want.
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.tag == "Door")
         {
-            Pressed();
-            //Delete if you dont want Text in the Console saying that You Press F.
-            Debug.Log("You Press E");
+            e.SetActive(true);
+            Animator anim = other.GetComponent<Animator>();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("You Press E");
+                anim.SetTrigger("Opening");
+            }
         }
     }
 
-    void Pressed()
+    private void OnTriggerExit(Collider other)
     {
-        //This will name the Raycasthit and came information of which object the raycast hit.
-        RaycastHit hit;
-
-        if (Physics.Raycast(Camera.transform.position, Camera.transform.forward, out hit, Max))
+        if(other.tag == "Door")
         {
-
-            // if raycast hits, then it checks if it hit an object with the tag Door.
-            if (hit.transform.tag == "Door")
-            {
-                anim = hit.transform.GetComponentInParent<Animator>();
-                opened = !opened;
-                anim.SetBool("Opened", !opened);
-                
-            }
+            e.SetActive(false);
         }
     }
 }

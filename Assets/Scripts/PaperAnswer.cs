@@ -66,4 +66,10 @@ public class PaperAnswer : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
+
+    public void useless()
+    {
+        Destroy(Dpaper);
+        Debug.Log("Wor");
+    }
 }

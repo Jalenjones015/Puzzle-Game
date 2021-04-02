@@ -5,6 +5,7 @@ using UnityEngine;
 public class Win : MonoBehaviour
 {
     public bool Winning;
+    public GameObject Finish;
 
     public void win(GameObject obj)
     {
@@ -16,6 +17,7 @@ public class Win : MonoBehaviour
                 if (game.Collected == 5)
                 {
                     Winning = true;
+                    Finish.SetActive(true);
                     game.Gamedone();
                     Debug.Log("won");
                 }

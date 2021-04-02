@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Puzzle Game.unity
     guid: f3a59d3163b6db742932af7ba4d57bcb
+  - enabled: 1
+    path: Assets/Scenes/coll.unity
+    guid: beca5b86dc1e0fb4e848452fa31d1605
   m_configObjects: {}
