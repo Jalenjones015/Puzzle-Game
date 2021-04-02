@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class tim : MonoBehaviour
 {
-    private float timer = 3;
+    private float timer = 180;
     public Text display;
 
     private void Update()
@@ -18,6 +18,7 @@ public class tim : MonoBehaviour
         int seconds = Mathf.FloorToInt(timer % 60);
 
         display.text = minutes.ToString("D2") + ":" + seconds.ToString("D2");
+        lose();
     }
 
     private void lose()
