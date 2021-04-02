@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class PaperAnswer : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class PaperAnswer : MonoBehaviour
     private GameObject var;
     public GameObject Dpaper;
     public GameObject DGO;
-    public Text text;
+    public Text Pages;
     private int score;
+    bool locked;
+    bool isp;
 
     private void Start()
     {
@@ -19,19 +22,31 @@ public class PaperAnswer : MonoBehaviour
 
     private void Update()
     {
-        text.text = score.ToString();
-        text.text = "Pages Collected: " + score;
+        Pages.text = score.ToString();
+        Pages.text = "Pages Collected: " + score;
+
     }
 
     public void pressed()
     {
-        Destroy(Dpaper);
-        Destroy(DGO);
-        Paper.SetActive(true);
-        GameObject var = GameObject.Find("Player");
-        var.GetComponent<Mouse>().enabled = false;
-        var.GetComponent<Movement>().enabled = false;
-        Debug.Log("Press");
+        if (!isp)
+        {
+            isp = true;
+            Destroy(Dpaper);
+            Destroy(DGO);
+            Paper.SetActive(true);
+            GameObject var = GameObject.Find("Player");
+            var.GetComponent<Mouse>().enabled = false;
+            var.GetComponent<Movement>().enabled = false;
+            Debug.Log("Press");
+            locked = false;
+            if (!locked)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
+        
         
     }
 
@@ -44,11 +59,12 @@ public class PaperAnswer : MonoBehaviour
         var.GetComponent<Mouse>().enabled = true;
         var.GetComponent<Movement>().enabled = true;
         Debug.Log("right");
-    }
-
-    public void scored()
-    {
-        score += 1;
-        Debug.Log("Score");
+        score++;
+        locked = true;
+        if (locked)
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 }

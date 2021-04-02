@@ -32,6 +32,6 @@ public class Movement : MonoBehaviour
         {
             player.transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
         }
-     
+      
     }
 }

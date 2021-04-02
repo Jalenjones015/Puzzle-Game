@@ -6,7 +6,17 @@ public class Mouse : MonoBehaviour
 {
     [SerializeField] Transform PlayerCam = null;
     [SerializeField] float sensitivity = 1;
+    public bool locked = true;
     float Camx = 0f;
+
+    void Start()
+    {
+        if (locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
 
     void Update()
     {
