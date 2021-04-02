@@ -11,7 +11,7 @@ public class PaperAnswer : MonoBehaviour
     public GameObject Dpaper;
     public GameObject DGO;
     public Text Pages;
-    private int score;
+    public int score;
     bool locked;
     bool isp;
 
@@ -59,7 +59,6 @@ public class PaperAnswer : MonoBehaviour
         var.GetComponent<Mouse>().enabled = true;
         var.GetComponent<Movement>().enabled = true;
         Debug.Log("right");
-        score++;
         locked = true;
         if (locked)
         {
