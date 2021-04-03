@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class PaperAnswer : MonoBehaviour
+public class PaperAnswer : GameOver
 {
     public GameObject Paper;
     private GameObject var;

@@ -12,13 +12,8 @@ public class Sound : MonoBehaviour
         audio = GetComponent<AudioSource>();
     }
 
-
-    public void OnTriggerEnter(Collider other)
+    public void sound()
     {
-        if (other.tag == "Player")
-        {
-          audio.PlayOneShot(crum);
-        }
-            
+        audio.PlayOneShot(crum);
     }
 }
