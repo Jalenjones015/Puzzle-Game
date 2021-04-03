@@ -10,22 +10,8 @@ public class PaperAnswer : MonoBehaviour
     private GameObject var;
     public GameObject Dpaper;
     public GameObject DGO;
-    //public Text Pages;
-    //public int score;
     bool locked;
     bool isp;
-
-    //private void Start()
-    //{
-    //    score = 0;
-    //}
-
-    //private void Update()
-    //{
-    //    Pages.text = score.ToString();
-    //    Pages.text = "Pages Collected: " + score;
-
-    //}
 
     public void pressed()
     {

@@ -10,6 +10,8 @@ public class PickUpTest : MonoBehaviour
     public KeyCode Action;
     public bool range;
     public GameObject f;
+    public AudioClip pap;
+    AudioSource papp;
 
     void Update()
     {
@@ -19,6 +21,8 @@ public class PickUpTest : MonoBehaviour
             {
                 paper.Invoke();
                 f.SetActive(false);
+                papp.PlayOneShot(pap);
+                
             }
         }
     }

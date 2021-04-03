@@ -10,6 +10,8 @@ public class Pause : MonoBehaviour
     public GameObject allon;
     public UnityEvent pauseing;
     public KeyCode escape;
+    public AudioClip pap;
+    AudioSource papp;
 
     private void Update()
     {
@@ -31,6 +33,7 @@ public class Pause : MonoBehaviour
             GameObject var = GameObject.Find("Player");
             var.GetComponent<Mouse>().enabled = true;
             var.GetComponent<Movement>().enabled = true;
+            papp.PlayOneShot(pap);
         }
         else if(!ispaused)
         {
