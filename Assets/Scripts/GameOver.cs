@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
 
     public void Gamedone()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Win");
     }
 
 

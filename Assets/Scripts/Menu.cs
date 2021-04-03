@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
     public void Howto()
     {
         SceneManager.LoadScene("How To");
-        Debug.Log("Start");
+        Debug.Log("how to");
     }
 
     public void close()
@@ -32,18 +32,12 @@ public class Menu : MonoBehaviour
     public void back()
     {
         SceneManager.LoadScene("Menu");
-        Debug.Log("Back");
+        Debug.Log("meu");
     }
 
     public void restart()
     {
         SceneManager.LoadScene("Puzzle Game");
-        Debug.Log("Back");
-    }
-
-    public void Crediback()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
-        Debug.Log("Back");
+        Debug.Log("restrat");
     }
 }
