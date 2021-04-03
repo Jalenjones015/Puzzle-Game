@@ -20,6 +20,8 @@ public class Win : MonoBehaviour
                     Finish.SetActive(true);
                     game.Gamedone();
                     Debug.Log("won");
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
         }
