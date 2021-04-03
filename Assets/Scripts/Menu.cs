@@ -7,19 +7,19 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Puzzle Game");
         Debug.Log("Start");
     }
 
     public void Credits()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
-        Debug.Log("Start");
+        SceneManager.LoadScene("Credits");
+        Debug.Log("credits");
     }
 
     public void Howto()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("How To");
         Debug.Log("Start");
     }
 
@@ -31,13 +31,13 @@ public class Menu : MonoBehaviour
 
     public void back()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Menu");
         Debug.Log("Back");
     }
 
-    public void How2back()
+    public void restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+        SceneManager.LoadScene("Puzzle Game");
         Debug.Log("Back");
     }
 
